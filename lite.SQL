@@ -31,7 +31,34 @@ group by f.film_id
 order by cant_actor_x_peli desc limit 10
 
 /*9*/
+select count(i.film_id), ad.address, ci.city, co.country from inventory i
+INNER JOIN store st on i.store_id = st.store_id
+INNER JOIN address ad on st.address_id = ad.address_id
+INNER JOIN city ci on ad.city_id = ci.city_id
+INNER JOIN country co on ci.country_id = co.country_id 
+group by st.store_id 
+/*en este caso al store lo pasamos por encima para poder llegar a las otras tablas como city, country*/
+/*group by separa los grupos*/
+/*ejemplares es una copia de peliculas*/ 
 
+/*10*/
+select count(DISTINCT i.film_id) as cant_peli_dist, ad.address, ci.city, co.country from film f
+INNER JOIN inventory i on f.film_id = i.film_id
+INNER JOIN store st on i.store_id = st.store_id
+INNER JOIN address ad on st.address_id = ad.address_id
+INNER JOIN city ci on ad.city_id = ci.city_id
+INNER JOIN country co on ci.country_id = co.country_id 
+group by st.store_id 
+/*distic elige las peliculas repetidas y las devuelve una vez*/
+/*count(distic....) si agregamos un count antes, cuenta las peliculas repetidas y nos devuelve un numero*/
+
+/*11*/
+select avg(rental_duration * rental_rate), c.name from film f 
+INNER JOIN film_category fc on f.film_id = fc.film_id
+INNER JOIN category c on fc.category_id = c.category_id
+group by c.category_id
+/*rental duration = duracion de alquiler*/
+/*rental rate = precio del alquiler*/
 
 
 6
