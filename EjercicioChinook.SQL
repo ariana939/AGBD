@@ -2,7 +2,12 @@
 select  FirstName, LastName from customers
 order by FirstName ASC, LastName ASC
 
+
 /*2*//*Nombre y duración de todas las canciones del álbum "Big Ones" ordenados del más largo al más corto*/
+select tr.name, Milliseconds from albums al 
+inner join tracks tr on al.AlbumId = tr.AlbumId
+WHERE al.AlbumId  = "Big Ones"
+/*no lo termine*/
 
 /*3*//*Nombre de todos los géneros con la cantidad de canciones de cada uno*/
 
