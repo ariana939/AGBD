@@ -113,10 +113,10 @@ WHERE f.title = "ALABAMA DEVIL";
 
 
 /*13*//*Nombre, duración y categoria de todas las peliculas ordenados del más largo al más corto.*/
-select f.title, f.rental_duration, c.category_id from film f
+select f.title, f.length, c.name from film f
 inner join film_category fc on f.film_id = fc.film_id
 inner join category c on fc.category_id = c.category_id
-order by f.rental_duration desc
+order by f.length desc
 
 
 /*14*//*Nombre de las peliculas que arranquen‘’w’’ con al menos 5 actores.*/
@@ -137,7 +137,7 @@ group by c.customer_id
 SELECT f.title as peli, f.length as duracion, a.first_name as actor from film f
 inner join film_actor fa on f.film_id = fa.film_id
 inner join actor a on fa.actor_id = a.actor_id
-order by f.length desc
+order by f.length asc
 
 
 /*17*//*apellido del cliente con su ciudad, pais, direccion, sus alquileres y pagos,
