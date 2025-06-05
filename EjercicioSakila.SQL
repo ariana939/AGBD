@@ -35,7 +35,17 @@ WHERE f.title = "ACADEMY DINOSAUR";
 
 /*5*//*¿Se puede realizar una unión de todas las tablas? En caso de que se pueda realizar la sentencia que 
 corresponde para unir las tablas. Seleccionando los datos que ustedes consideren necesarios de cada tabla.*/
-
+SELECT title from film f
+INNER JOIN film_category fc on f.film_id = fc.film_id
+INNER JOIN category c on fc.category_id = c.category_id
+INNER JOIN language l on f.language_id = l.language_id
+INNER JOIN film_actor fa on f.film_id = fa.film_id
+INNER JOIN actor a on fa.actor_id = a.actor_id
+INNER JOIN inventory i on f.film_id = i.film_id
+INNER JOIN film_text ft on i.film_id = ft.film_id
+INNER JOIN store s on i.store_id = s.store_id
+INNER JOIN rental r on i.inventory_id = r.inventory_id
+/*falta*/
 
 
 /*6*//*¿Cuántas películas hay en cada tipo de "rating" (g, pg, pg13, r, nc17)*/
