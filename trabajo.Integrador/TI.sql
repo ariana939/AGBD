@@ -45,12 +45,6 @@ CREATE TABLE "shoes" (
     FOREIGN KEY(id_ubicacion) REFERENCES ubicacionLocal (id_ubicacion)
 );
 
-CREATE TABLE "ubicacionLocal" (/*PARA EL TRABAJO INTEGRADOR NO LO USAMOS*/
-	"id_ubicacion"	INTEGER,
-	"ubicacion"	INTEGER NOT NULL,
-	PRIMARY KEY("id_ubicacion" AUTOINCREMENT)
-);
-
 CREATE TABLE "metodoDePago" (
 	"id_metodo"	INTEGER,
 	"metodo"	VARCHAR (20) NOT NULL,
