@@ -226,12 +226,3 @@ inner join country co on c.country_id  = co.count
 group by co.country
 order by co.country desc  
 */
-
-
-
-
-/*ejemplo 4*/
-select fil.title, min(rental.return_date),
-max(rental.return_date)
-from rental 
-inner join inventory
