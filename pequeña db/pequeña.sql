@@ -66,7 +66,7 @@ CREATE TABLE "opcionesPago" (
 	FOREIGN KEY("id_metodo") REFERENCES metodo("id_metodo")
 );
 
-/*not null = tiene que tener dato obligatoriamente(rocio 2025)*/
+/*not null = tiene que tener dato obligatoriamente(rocio 2025)*qe2w1º/
 
 
 
